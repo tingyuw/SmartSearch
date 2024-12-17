@@ -1,10 +1,27 @@
-<h5><u><i>Smart Search </i></u></h5>
-<form class="example-form">
-<mat-form-field class="example-full-width">
-<span matPrefix> </span>
-<input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "search">
-<button matSuffix mat-button><mat-icon >search</mat-icon></button>
-</mat-form-field>
-<br/>
-{{search}}
-</form>
+<div class="container">
+    <h1>{{ title }}</h1>
+</div>
+<div class="">
+    <div class="row">
+        <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"/>
+            <button type="button" (click)="onClick()">Search</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Id</th>
+              <th>Reference</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tp of tradingPrograms | filterBy : ['TradingPartnerName']:this.searchText">
+                    <td>{{tp.TradingPartnerName}}</td>
+                    <td>{{tp.TradingProgramId}}</td>
+                    <td>{{tp.TradingProgramReference}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

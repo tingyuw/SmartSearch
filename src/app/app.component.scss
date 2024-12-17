@@ -1,0 +1,20 @@
+.container {
+	padding-top: 50px;
+	padding-bottom: 10px;
+    text-align: center;
+	color: #34B233;
+	font-family: proxima-nova, sans-serif;
+}
+.search-hero {
+	max-width: 500px;
+	padding-bottom: 50px;
+    text-align: center;
+	margin: auto;
+}
+.form-control {
+	box-shadow: 0 10px 40px 0 #34B233;
+	&::placeholder {
+		font-family: FontAwesome;
+	};
+	margin-right: 0.5cm;
+}
